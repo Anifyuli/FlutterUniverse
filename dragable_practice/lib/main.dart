@@ -15,7 +15,7 @@ class _MainAppState extends State<MainApp> {
   // Warna ditampung dalam variabel baru
   Color color1 = Colors.amber;
   Color color2 = Colors.green;
-  Color targetColor;
+  Color? targetColor;
   // Kondisi awal widget yang akan diterima
   bool isAccepted = false;
 
@@ -31,7 +31,7 @@ class _MainAppState extends State<MainApp> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Draggable(
+                  Draggable<Color>(
                     data: color1,
                     feedback: SizedBox(
                         width: 50,
@@ -57,10 +57,37 @@ class _MainAppState extends State<MainApp> {
                           shape: const StadiumBorder(),
                           elevation: 3,
                         )),
-                  ) // StadiumBorder untuk menciptakan lengkungan pada shape, elevation untuk menggeser posisi Material sehingga muncul shadow atau bayangan
+                  ), // StadiumBorder untuk menciptakan lengkungan pada shape, elevation untuk menggeser posisi Material sehingga muncul shadow atau bayangan
+                  Draggable<Color>(
+                    data: color2,
+                    feedback: SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: Material(
+                          color: color2.withOpacity(0.7),
+                          shape: const StadiumBorder(),
+                          elevation: 0,
+                        )),
+                    childWhenDragging: const SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: Material(
+                          color: Colors.black26,
+                          shape: StadiumBorder(),
+                          elevation: 0,
+                        )),
+                    child: SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: Material(
+                          color: color2,
+                          shape: const StadiumBorder(),
+                          elevation: 3,
+                        )),
+                  )
                 ],
               ),
-              DragTarget(
+              DragTarget<Color>(
                 builder: (context, candidates, rejected) {
                   return (isAccepted) ? SizedBox(
                         width: 100,
