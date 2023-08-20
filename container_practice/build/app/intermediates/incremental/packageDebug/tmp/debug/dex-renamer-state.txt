@@ -1,4 +1,0 @@
-#Wed Jul 19 22:49:16 WIB 2023
-base.0=/home/anifyuli/Development/Dart-Flutter/FlutterUniverse/container_practice/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
