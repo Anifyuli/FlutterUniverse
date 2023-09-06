@@ -61,34 +61,38 @@ class _MyAppState extends State<MyApp> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
+                  ElevatedButton.icon(
                       onPressed: () {
                         playSound(
                             "https://audio.jukehost.co.uk/J2wJYW1cR8fIFgzfHJ2NfWccZTsKvmAT");
                       },
-                      icon: const Icon(Icons.play_circle, size: 64),
-                      alignment: Alignment.center),
-                  IconButton(
+                      icon: const Icon(Icons.play_circle, size: 18),
+                      label: const Text('Play'),
+                    ),
+                  ElevatedButton.icon(
                       onPressed: () {
                         pauseSound(
                             "https://audio.jukehost.co.uk/J2wJYW1cR8fIFgzfHJ2NfWccZTsKvmAT");
                       },
-                      icon: const Icon(Icons.pause_circle, size: 64),
-                      alignment: Alignment.center),
-                  IconButton(
+                      icon: const Icon(Icons.pause_circle, size: 18),
+                      label: const Text('Pause')
+                    ),
+                  ElevatedButton.icon(
                       onPressed: () {
                         stopSound(
                             "https://audio.jukehost.co.uk/J2wJYW1cR8fIFgzfHJ2NfWccZTsKvmAT");
                       },
-                      icon: const Icon(Icons.stop_circle, size: 64),
-                      alignment: Alignment.center),
-                  IconButton(
+                      icon: const Icon(Icons.stop_circle, size: 18),
+                      label: const Text('Stop')  
+                    ),
+                  ElevatedButton.icon(
                       onPressed: () {
                         nextSound(
                             "https://audio.jukehost.co.uk/J2wJYW1cR8fIFgzfHJ2NfWccZTsKvmAT");
                       },
-                      icon: const Icon(Icons.navigate_next_rounded, size: 64),
-                      alignment: Alignment.center)
+                      icon: const Icon(Icons.navigate_next_rounded, size: 18),
+                      label: const Text('Next'),
+                    )
                 ],
               ),
             )
