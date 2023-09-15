@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
 
   _MyAppState() {
     audioPlayer = AudioPlayer();
-    audioPlayer.onDurationChanged.listen((duration) {
+    audioPlayer.onPositionChanged.listen((duration) {
       setState(() {
         audioDuration = duration;
       });
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
     await audioPlayer.stop();
   }
 
-  void nextSound(String url) async {
+  void resumeSound(String url) async {
     audioPlayer.resume();
   }
 
@@ -87,7 +87,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ElevatedButton.icon(
                       onPressed: () {
-                        nextSound(
+                        resumeSound(
                             "https://audio.jukehost.co.uk/J2wJYW1cR8fIFgzfHJ2NfWccZTsKvmAT");
                       },
                       icon: const Icon(Icons.navigate_next_rounded, size: 18),
